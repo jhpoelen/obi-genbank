@@ -55,7 +55,7 @@ where the lines with "grep" in is select only records that have the specified nu
 
 ## Results
 
-On processing X millions records, 256 candidate genbank accession records with mention of OBI were shared with Katelin Pearson for review. By selecting the PLN division (plants), and selecting the OBI institutions code, we reduced the search space by a couple of order of magnitudes. With only a few hundred records, Katline Pearson, an OBI curator, was able to make the candidate GenBank accession records that likely referenced OBI specimen records.
+On processing millions of GenBank accession records, 256 candidate genbank accession records with mention of OBI were shared with Katelin Pearson for review. By selecting the PLN division (plants), and selecting the OBI institutions code, we reduced the search space by a couple of order of magnitudes. With only a few hundred records, Katline Pearson, an OBI curator, was able to make the candidate GenBank accession records that likely referenced OBI specimen records (see [genbank-associations-mentioning-OBI.csv](./genbank-associations-mentioning-OBI.csv) for the table with manual review notes).
 
 Following, Jorrit Poelen used the OBI preston archive and retrieved preserved specimen records that contained numbers and/or other identifying information (e.g., scientific name occurring in the genbank accession record) to select a candidate specimen record for each candidate accession record. In about 1.5 hours, he compiled this list of specimen record / accession records associations in the following format. 
 
