@@ -57,13 +57,23 @@ where the lines with "grep" in is select only records that have the specified nu
 
 On processing X millions records, 256 candidate genbank accession records with mention of OBI were shared with Katelin Pearson for review. By selecting the PLN division (plants), and selecting the OBI institutions code, we reduced the search space by a couple of order of magnitudes. With only a few hundred records, Katline Pearson, an OBI curator, was able to make the candidate GenBank accession records that likely referenced OBI specimen records.
 
-Following, Jorrit Poelen used the OBI preston archive and retrieved preserved specimen records that contained numbers and/or other identifying information (e.g., scientific name occurring in the genbank accession record) to select a candidate specimen record for each candidate accession record. In about 1.5 hours, He compiled this list of specimen record / accession records associations in the following format. 
+Following, Jorrit Poelen used the OBI preston archive and retrieved preserved specimen records that contained numbers and/or other identifying information (e.g., scientific name occurring in the genbank accession record) to select a candidate specimen record for each candidate accession record. In about 1.5 hours, he compiled this list of specimen record / accession records associations in the following format. 
 
-With this information, Katelin Pearson took about 15 minutes to annotate the specimen records in the CCH2 Symbiota database with their related GenBank Accession number. Most of this time was spent to convert the information provided by Jorriti. The full table can be found in the appendix and the first three lines of the OBI genetics table can be found below. Here, the occid is the record number unique to the CCH2 Symbiota database, url is the reference a GenBank accession, resourcename is the type of resource that Symbiota understands, and locus the optional information supported by Symbiota to include in an associated sequence record.
+With this information, Katelin Pearson took about 15 minutes to annotate the specimen records in the CCH2 Symbiota database with their related GenBank Accession number. Most of this time was spent to convert the information provided by Jorrit Poelen into a more convenient format. The full table can be found in [Appendix A](#appendix-a) and the first two lines of the OBI genetics table can be found below. Here, the occid is the record number unique to the CCH2 Symbiota database, url is the reference a GenBank accession, resourcename is the type of resource that Symbiota understands, and locus the optional information supported by Symbiota to include in an associated sequence record.
+
 
 | occid | url | resourcename | locus |
 | --- | --- | --- | --- |
 | 4060422 | https://www.ncbi.nlm.nih.gov/nuccore/MW025115 | GenBank Record | Fritillaria sp. SR-2020 voucher OBI161445 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence; and large subunit ribosomal RNA gene, partial sequence. |
+
+
+After Katelin Pearson upload the genbank link table into the CCH2 Symbiota database, she exported the updated records to the published DwC-A. Following, Jorrit Poelen tracked the updated version of the DwC-A and selected the records with associated GenBank sequence records. Following, he created a table (see [Appendix B.](#appendix-b)) including the reference to the original record, a web url to a html record page, and the associated genbank record annotations. The first three lines of Appendix B. can be found below.
+
+| derivedFrom | reference | associatedSequences |
+| --- | --- | --- |
+| https://linker.bio/line:zip:hash://sha256/cd9de973510975dac3394952bba9c486a482762b3beab05ecb678037b99ab85b!/occurrences.csv!/L1,L143 | https://cch2.org/portal/collections/individual/index.php?occid=163984 | Test, Test, URL test |
+| https://linker.bio/line:zip:hash://sha256/cd9de973510975dac3394952bba9c486a482762b3beab05ecb678037b99ab85b!/occurrences.csv!/L1,L2361 | https://cch2.org/portal/collections/individual/index.php?occid=166203 | GenBank Record, Angelica hendersonii voucher Tracey & V. Call 2490 (OBI09031) internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence., https://www.ncbi.nlm.nih.gov/nuccore/MT735455\|GenBank Record, Angelica hendersonii Tracey & V. Call 2490 (OBI09031) ndhF-rpl32 intergenic spacer, partial sequence., https://www.ncbi.nlm.nih.gov/nuccore/MT765790\|GenBank Record, Angelica hendersonii Tracey & V. Call 2490 (OBI09031) tRNA-Asp (trnD-GUC), tRNA-Tyr (trnY-GUA), tRNA-Glu (trnE-UUC), and tRNA-Thr (trnT-GGU) genes, complete sequence., https://www.ncbi.nlm.nih.gov/nuccore/MT765975\|GenBank Record, Angelica hendersonii Tracey & V. Call 2490 (OBI09031) rpl32-trnL intergenic spacer and tRNA-Leu (trnL) gene, partial sequence., https://www.ncbi.nlm.nih.gov/nuccore/MT766140 |
+
 
 
 
