@@ -40,7 +40,7 @@ preston ls\
  | grep "OBI"
 ```
 
-Similarly, the OBI specimen records were tracked and archived using Preston. Then, this versioned and offline enabled archive was used to query for identifiers found in candidate records. 
+Similarly, the OBI specimen records were tracked and archived using Preston [2]. Then, this versioned and offline enabled archive was used to query for identifiers found in candidate records. 
 
 For instance, GenBank accession record https://www.ncbi.nlm.nih.gov/nuccore/MT735455 references numbers like "2490" and "9031" (from OBI09031) extracted from their locus. These numbers are then used to select records that contain both via query:  
 
@@ -82,6 +82,10 @@ After Katelin Pearson upload the genbank link table into the CCH2 Symbiota datab
 We took a systematic approach to independently track natural history collection records and sequence records. Then, we used regular expressions (or queries) to select candidate GenBank accession records. Following, after manual review of candidate records, we extracted identifiers and names to link locate their associated specimen records in the Hoover Herbarium collection as tracked. While the method is not fully automated, it did allow for reducing candidate record such that manual review was feasible. We expected that periodic revisiting of the available records in GenBank will yield additional associated genbank records. Also, we hope that this example show that links between existing GenBank accessions and their specimen records can be found without major technological investment. And, we hope that this example will help inspire to develop best practices to place identifying information in GenBank records such that collection managers can somehwat easily locate sequences associated to the specimen they keep. 
 
 ## References
+
+[1] Poelen, Jorrit H. (2023). GenBank PLN (Plantae, Fungi, Algae) Sequence Index in TSV, CSV, JSONL formats [hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e](https://linker.bio/hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e) [hash://md5/f6f78f64e3b3ff06adc3229badbd578b](https://linker.bio/hash://md5/f6f78f64e3b3ff06adc3229badbd578b) (0.1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.8117720
+
+[2] Jorrit Poelen, Katelin Pearson, and Jenn Yost. 2023. Extending San Luis Obispo Herbarium Records to include associated NCBI GenBank sequences. https://github.com/jhpoelen/obi-genbank [hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6](https://linker.bio/hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6). 
 
 ## Appendix A
 
