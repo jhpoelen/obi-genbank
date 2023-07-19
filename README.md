@@ -1,4 +1,4 @@
-# Extending San Luis Obispo Herbarium Records to include associated NCBI GenBank sequences. 
+# Extending OBI Herbarium Records to include associated NCBI GenBank sequences. 
 
 by Jorrit Poelen, Katie Pearson, and Jenn Yost
 
@@ -18,7 +18,7 @@ This repository is the outcome at a first prototype to help outline a process to
 
 ## Example
 
-The Hoover Herbarium hosts a preserved specimen of type _Angelica hendersonii_ Coult. & Rose that was collected in 1966-07-05 by Tracey & Viola Call at the north end of Tomales Bay and 2 mi south of Tomales in Marin County, California with catalog number: OBI09031, record number: 2490, occurrence id: 256368e3-f8d7-4028-8010-1a4ff3eb8111, and web reference https://cch2.org/portal/collections/individual/index.php?occid=166203.
+The Hoover Herbarium hosts a preserved specimen of type _Angelica hendersonii_ Coult. & Rose that was collected in 1966-07-05 by Tracey & Viola Call at the north end of Tomales Bay and 2 mi south of Tomales in Marin County, California with catalog number: OBI09031, collector number: 2490, occurrence id: 256368e3-f8d7-4028-8010-1a4ff3eb8111, and web reference https://cch2.org/portal/collections/individual/index.php?occid=166203.
 
 GenBank hosts a accession record https://www.ncbi.nlm.nih.gov/nuccore/MT735455 with locus Angelica hendersonii voucher Tracey & V. Call 2490 (OBI09031) internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence. 
 
@@ -85,7 +85,7 @@ We took a systematic approach to independently track natural history collection 
 
 [1] Poelen, Jorrit H. (2023). GenBank PLN (Plantae, Fungi, Algae) Sequence Index in TSV, CSV, JSONL formats [hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e](https://linker.bio/hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e) [hash://md5/f6f78f64e3b3ff06adc3229badbd578b](https://linker.bio/hash://md5/f6f78f64e3b3ff06adc3229badbd578b) (0.1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.8117720
 
-[2] Jorrit Poelen, Katelin Pearson, and Jenn Yost. 2023. Extending San Luis Obispo Herbarium Records to include associated NCBI GenBank sequences. https://github.com/jhpoelen/obi-genbank [hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6](https://linker.bio/hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6). 
+[2] Jorrit Poelen, Katelin Pearson, and Jenn Yost. 2023. Extending OBI Herbarium Records to include associated NCBI GenBank sequences. https://github.com/jhpoelen/obi-genbank [hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6](https://linker.bio/hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6). 
 
 ## Appendix A
 
