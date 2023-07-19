@@ -4,6 +4,10 @@ by Jorrit Poelen, Katie Pearson, and Jenn Yost
 
 2023-07-19
 
+https://linker.bio/hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6
+
+[![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:2b8a4eb0f0a03739a39927066de5540b1ab88e5d/)](https://archive.softwareheritage.org/swh:1:dir:2b8a4eb0f0a03739a39927066de5540b1ab88e5d;origin=https://github.com/jhpoelen/obi-genbank;visit=swh:1:snp:69fccddef82dd6bfa4248e1519dfe4c041f425b0;anchor=swh:1:rev:988e0fd1e19d9eaefb8fde35882e6d53ee8f482a)
+
 ## Context
 
 Billions of biodiversity data records are made openly available by hundreds of Natural History Collections all over the world. Also, since 1982, National Institutes of Health have published versions nucleotide sequences through GenBank. Many specimen described in Natural History Collections have associated GenBank sequence accessions available in GenBank. 
