@@ -59,7 +59,7 @@ As it stands, the work that Jorrit has done to showcase a method to extend digit
 
  And, perhaps more importantly, 
 
-**Q4. do the current funding mechanisms allow for rapid development of ideas to address immediate needs in the biodiversity informatics community?**
+**Q3. do the current funding mechanisms allow for rapid development of ideas to address immediate needs in the biodiversity informatics community?**
 
 I'd like very much to contribute to your support hub event, and before doing so, I'd like to discuss the thoughts above. The reason for taking on this prototype challenge was to gather some evidence to support the idea that current funding mechanisms and project management are insufficient to build something as dynamic and complex as the digital extended specimen. 
 
