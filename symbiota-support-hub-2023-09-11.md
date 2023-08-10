@@ -3,6 +3,8 @@ title: 'Building Digital Extended Specimen One Association at a time: What does 
 date: 2023-09-11
 author: 
  - Jorrit H. Poelen
+bibliography: biblio.bib
+reference-section-title: References
 ---
 
 
@@ -14,7 +16,7 @@ As I am stewing on an abstract for your 2023-09-11 Symbiota Support Hub session,
 
 1. time investment to organize extended specimen workshop at Digital Data 2023 at Tempe, AZ
 
-2. time investment to package NCBI GenBank and OBI Herbarium digital resources
+2. time investment to package NCBI GenBank and OBI Herbarium digital resources [@Poelen_2023_a; @Poelen_2023_b]
 
 3. time investment to build a custom (off-line enabled) workflow based on (archived) digital resources of known origin
 
@@ -65,7 +67,7 @@ I'd like very much to contribute to your support hub event, and before doing so,
 
 It make me think of a proverb I first encountered as a 6 year old, and found inspirational only later in life:
 
-> "Everybody want to go back to nature, but nobody want to walk."
+> "Everybody want to go back to nature, but nobody wants to walk."
 
 which can be reworded in terms of the digital extended specimen:
 
@@ -73,7 +75,7 @@ which can be reworded in terms of the digital extended specimen:
 
 This may be a bit extreme of a statement in context of our collaboration, especially because I know that you've invested plenty of time in extending existing digital specimen with their GenBank sequences and beyond.
 
-In short, I'd like to have more discussion around effective collaboration that help nurture, and sustain, the socio-economical aspects of the digital extended specimen. Without these productive collaborations, the massive amount of work needed to better integrate the biodiversity / biology and informatics disciplines continues to be as is - sporadic and mostly based on volunteer work.
+In short, I'd like to have more discussion around effective collaboration that help nurture, and sustain, the socio-economical aspects of the digital extended specimen. Without these productive collaborations, the massive amount of work needed to better integrate the biodiversity / biology and informatics disciplines continues to be as is - sporadic and mostly based on volunteer work. A similar, but more broad argument, can be made for creating good working conditions to promote quality research [@Rahal_2023]. 
 
 Curious to hear your thoughts,
 
