@@ -38,7 +38,7 @@ In an effort to do a little cost/benefit analysis, I made a quick back-of-the-na
 
 78 cookies / 25 GenBank associations = 3 cookies / OBI-GenBank association
 
-Assuming that someone is willing to work for 3 cookies per association, and assuming that OBI is representative collection as far as 0.03% of specimen (i.e., 94,031 OBI preserved specimen) having GenBank associations specimen with GenBank associations (25 detected genbank associations), and estimating about 200 million digitized preserved specimen (GBIF claims 225M, iDigBio claims 138M as of 2023-08-10), you'd have to buy = 200M * 0.02% / 3 =  4M associations * 3 cookies / association =  12M cookies or about 153,846 tubs of TJs Ginger Cookies.
+Assuming that someone is willing to work for 3 cookies per association, and assuming that OBI is representative collection as far as 0.03% of specimen (i.e., 94,031 OBI preserved specimen) having GenBank associations (25 detected genbank associations), and estimating about 200 million digitized preserved specimen (GBIF claims 225M, iDigBio claims 138M as of 2023-08-10), you'd have to buy = 200M * 0.02% / 3 =  4M associations * 3 cookies / association =  12M cookies or about 153,846 tubs of TJs Ginger Cookies.
 
 The case for making our method to efficiently produce/distribute the number of cookies needed per GenBank association: 
 
