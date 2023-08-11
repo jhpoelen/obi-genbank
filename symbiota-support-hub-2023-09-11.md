@@ -79,7 +79,7 @@ It make me think of a proverb I first encountered as a 6 year old, and found ins
 
 which can be reworded in terms of the digital extended specimen:
 
-> "Everybody want to have the digital extended specimen, but someone else has to build it."
+> "Everybody wants to have the digital extended specimen, but someone else has to build it."
 
 This may be a bit extreme of a statement in context of our collaboration, especially because I know that you've invested plenty of time in extending existing digital specimen with their GenBank sequences and beyond.
 

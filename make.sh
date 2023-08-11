@@ -3,7 +3,7 @@
 
 
 function render() {
- cat symbiota-support-hub-2023-09-11.md\
+ ls -1 | grep .md$ | grep -v README | xargs cat\
  | pandoc -s --to ${1} --citeproc -o -\
  > symbiota-support-hub-2023-09-11.${1}
 }
@@ -11,3 +11,4 @@ function render() {
 render docx
 render pdf
 render rtf
+render html
