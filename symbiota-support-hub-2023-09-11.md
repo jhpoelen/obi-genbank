@@ -46,7 +46,7 @@ In an effort to do a little cost/benefit analysis, I made a quick back-of-the-na
 
 78 cookies / 25 GenBank associations = 3 cookies / OBI-GenBank association
 
-Assuming that someone is willing to work for 3 cookies per association, and assuming that OBI is representative collection as far as 0.03% of specimen (i.e., 94,031 OBI preserved specimen) having GenBank associations (25 detected genbank associations), and estimating about 200 million digitized preserved specimen (GBIF claims 225M, iDigBio claims 138M as of 2023-08-10), you'd have to buy = 200M * 0.03% / 3 =  60k associations * 3 cookies / association =  180k cookies or about 2300 tubs of TJs Ginger Cookies.
+Assuming that someone is willing to work for 3 cookies per association, and assuming that OBI is representative collection as far as 0.03% of specimen (i.e., 94,031 OBI preserved specimen) having GenBank associations (25 detected genbank associations), and estimating about 200 million digitized preserved specimen (GBIF claims 225M, iDigBio claims 138M as of 2023-08-10), you'd have to buy = 200M * 0.03% * 3 =  60k associations * 3 cookies / association =  180k cookies or about 2300 tubs of TJs Ginger Cookies.
 
 The case for making our method to efficiently produce/distribute the number of cookies needed per GenBank association: 
 
@@ -61,7 +61,7 @@ So, now my open questions are:
 
 **Q1. How can we estimate the methods needed to support the discovery and maintenance of Specimen-GenBank records such that it can be sustained by those valueing the availability of Specimen-GenBank records links?**
 
-This is taking into account that one person cannot possibly eat 12M cookies before they go stale, even if someone is willing (and able) to source the 150k cookie tubs needed to discover the specimen-genbank claims. So, distribution of the cookies should be factored into the development of the Specimen<>GenBank association discovery and recording method.
+This is taking into account that one person cannot possibly eat 180k cookies before they go stale, even if someone is willing (and able) to source the 2300 cookie tubs needed to discover the specimen-genbank claims. So, distribution of the cookies should be factored into the development of the Specimen<>GenBank association discovery and recording method.
 
 As it stands, the work that Jorrit has done to showcase a method to extend digital representations preserved specimen with their GenBank associations is not yet valued in terms of "real" monetary units. Which means that his work is, economically speaking, valueless. 
 
