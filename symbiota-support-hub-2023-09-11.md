@@ -1,10 +1,18 @@
 ---
-title: 'Building Digital Extended Specimen One Association at a time: What does it take to extend OBI with their associated GenBank sequences?'
+title: 'Building Digital Extended Specimen One Association at a Time: What Does It Take to Extend OBI Herbarium Records with their Associated GenBank Sequences?'
 date: 2023-09-11
 author: 
  - Jorrit H. Poelen
+ - Jenn Yost
+ - Katelin Pearson
 bibliography: biblio.bib
 reference-section-title: References
+abstract: |
+  Specimen from Natural History Collections are 
+  physical repositories of genetic information. Genetic sequences extracted from
+  specimen are stored in genetic sequence databases like the openly accessible GenBank at NCBI, DNA DataBank of Japan, or the European Nucleotide Archive (ENA). 
+  While researchers and collection managers make efforts to associate
+  (or link) Natural History Collection records with their derived genetic accession records, extra work is need to make these associations explicit. We describe how a collaboration between a biodiversity informatics expert and collection managers of the Hoover/OBI Herbarium at CalPoly, San Luis Obispo, CA was forged with the aim to extend OBI specimen records to include their associated GenBank records. In addition, we quantify the costs of creating these specimen extensions, and discuss the socio-economic capacity needed to repeat this digital specimen extension process for the hundreds of millions of specimen records available globally today.  
 ---
 
 
@@ -38,7 +46,7 @@ In an effort to do a little cost/benefit analysis, I made a quick back-of-the-na
 
 78 cookies / 25 GenBank associations = 3 cookies / OBI-GenBank association
 
-Assuming that someone is willing to work for 3 cookies per association, and assuming that OBI is representative collection as far as 0.03% of specimen (i.e., 94,031 OBI preserved specimen) having GenBank associations (25 detected genbank associations), and estimating about 200 million digitized preserved specimen (GBIF claims 225M, iDigBio claims 138M as of 2023-08-10), you'd have to buy = 200M * 0.02% / 3 =  4M associations * 3 cookies / association =  12M cookies or about 153,846 tubs of TJs Ginger Cookies.
+Assuming that someone is willing to work for 3 cookies per association, and assuming that OBI is representative collection as far as 0.03% of specimen (i.e., 94,031 OBI preserved specimen) having GenBank associations (25 detected genbank associations), and estimating about 200 million digitized preserved specimen (GBIF claims 225M, iDigBio claims 138M as of 2023-08-10), you'd have to buy = 200M * 0.03% / 3 =  60k associations * 3 cookies / association =  180k cookies or about 2300 tubs of TJs Ginger Cookies.
 
 The case for making our method to efficiently produce/distribute the number of cookies needed per GenBank association: 
 
