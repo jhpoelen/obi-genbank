@@ -1,5 +1,5 @@
 ---
-title: 'Building Digital Extended Specimen One Association at a Time: What Does It Take to Extend OBI Herbarium Records with their Associated GenBank Sequences?'
+title: 'Building a Digital Extended Specimen One Association at a Time: What Does It Take to Extend OBI Herbarium Records with their Associated GenBank Sequences?'
 date: 2023-09-11
 author: 
  - Jorrit H. Poelen
