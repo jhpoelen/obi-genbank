@@ -86,6 +86,7 @@ preston ls\
  --no-cache\
  | preston gb-stream\
  --remote https://linker.bio,https://zenodo.org/record/8117720/files/,https://biokic6.rc.asu.edu/preston/gbpln\
+ --no-cache\
  | grep "OBI"
 ```
 
@@ -106,6 +107,7 @@ preston ls\
  --no-cache\
  | preston dwc-stream\
  --remote https://linker.bio\
+ --no-cache\
  | grep -E "[^0-9a-zA-Z-](2490)[^0-9a-zA-Z]"\
  | grep -E "[^0-9a-zA-Z-](9031)[^0-9a-zA-Z]"
 ```
