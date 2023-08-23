@@ -83,6 +83,7 @@ Then the GenBank archive was processed to list all records that mention "OBI" in
 preston ls\
   --anchor hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e\
   --remote https://linker.bio\
+  --no-cache\
  | preston gb-stream\
  | grep "OBI"
 ```
@@ -101,6 +102,7 @@ For instance, GenBank accession record https://www.ncbi.nlm.nih.gov/nuccore/MT73
 preston ls\
  --anchor hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6\
  --remote https://linker.bio\
+ --no-cache\
  | preston dwc-stream\
  | grep -E "[^0-9a-zA-Z-](2490)[^0-9a-zA-Z]"\
  | grep -E "[^0-9a-zA-Z-](9031)[^0-9a-zA-Z]"
