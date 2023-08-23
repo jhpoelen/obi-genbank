@@ -81,10 +81,11 @@ Then the GenBank archive was processed to list all records that mention "OBI" in
 
 ```bash
 preston ls\
-  --anchor hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e\
-  --remote https://linker.bio\
-  --no-cache\
+ --anchor hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e\
+ --remote https://linker.bio,https://zenodo.org/record/8117720/files/,https://biokic6.rc.asu.edu/preston/gbpln\
+ --no-cache\
  | preston gb-stream\
+ --remote https://linker.bio,https://zenodo.org/record/8117720/files/,https://biokic6.rc.asu.edu/preston/gbpln\
  | grep "OBI"
 ```
 
@@ -104,6 +105,7 @@ preston ls\
  --remote https://linker.bio\
  --no-cache\
  | preston dwc-stream\
+ --remote https://linker.bio\
  | grep -E "[^0-9a-zA-Z-](2490)[^0-9a-zA-Z]"\
  | grep -E "[^0-9a-zA-Z-](9031)[^0-9a-zA-Z]"
 ```
