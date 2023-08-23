@@ -30,15 +30,68 @@ The Hoover Herbarium publishes their digital collections using DwC-A through the
 
 GenBank publishes their sequence accession records in flat file archives online via https://ftp.ncbi.nlm.nih.gov/genbank/ . Their publications are published grouped by divisions. One of these divisions, the so-called PLN division, covers sequences of plants, fungi and algae. 
 
-We used Preston, a biodiversity dataset tracker, to track GenBank PLN sequence records and make them available for versioned archiving, and offline processing [1]. The resulting Preston package of GenBanks PLN division record was archived offline on an external harddisk and online at ASU's BioKiC (Biodiversity Knowledge integration Center) and made available via https://linker.bio .  
+We used Preston, a biodiversity dataset tracker, to track GenBank PLN sequence records and make them available for versioned archiving, and offline processing [1].
+
+The following script was used to track the GenBank PLN sequence records:
+
+```bash
+#!/bin/bash
+#
+# Lists Genbank Plant sequence entries (including fungi and algae)
+#
+# For more info, see https://ftp.ncbi.nlm.nih.gov/genbank/README.genbank 
+
+preston track "https://ftp.ncbi.nlm.nih.gov/genbank/gbrel.txt"\
+ | preston cat\
+ | grep -oE "gbpln+[0-9]+[.]seq"\
+ | sed 's+^+https://ftp.ncbi.nlm.nih.gov/genbank/+g'\
+ | sed 's+$+.gz+g'
+```
+
+At the time, this produced a list of resources starting with:
+
+```
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1.seq.gz
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln10.seq.gz
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln100.seq.gz
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1000.seq.gz
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1001.seq.gz
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1002.seq.gz
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1003.seq.gz
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1004.seq.gz
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1005.seq.gz
+https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1006.seq.gz
+```
+
+These files ending with ```seq.gz``` were then tracked using command like:
+
+```bash
+preston track https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1.seq.gz
+```
+
+A Preston package was built using these "track" commands to document where and when genbank resources were accessed, and what they contained. In addition, copies of the resources were made. This package can be uniquely identified by the following content id:
+
+```
+hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e
+```
+
+This resulting Preston package of GenBanks PLN division record was archived offline on an external harddisk and online at ASU's BioKiC (Biodiversity Knowledge integration Center) and made available via https://linker.bio .  
 
 Then the GenBank archive was processed to list all records that mention "OBI" in their (locus, voucher_specimen) descriptions using:
 
 ```bash
 preston ls\
+  --anchor hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e\
+  --remote https://linker.bio\
  | preston gb-stream\
  | grep "OBI"
 ```
+
+The first command (i.e., ```preston ls ... https://linker.bio```) lists the content of the package with id hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e, and downloads the necessary data via https://linker.bio if needed. 
+
+The second command (i.e., ```preston gb-stream```) analyzes the package content as a stream, and generates metadata objects for each genbank accession encountered.
+
+The third command (i.e., ```grep "OBI"```) includes only those datadata records that contain "OBI".
 
 Similarly, the OBI specimen records were tracked and archived using Preston [2]. Then, this versioned and offline enabled archive was used to query for identifiers found in candidate records. 
 
@@ -46,6 +99,8 @@ For instance, GenBank accession record https://www.ncbi.nlm.nih.gov/nuccore/MT73
 
 ```bash
 preston ls\
+ --anchor hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6\
+ --remote https://linker.bio\
  | preston dwc-stream\
  | grep -E "[^0-9a-zA-Z-](2490)[^0-9a-zA-Z]"\
  | grep -E "[^0-9a-zA-Z-](9031)[^0-9a-zA-Z]"
