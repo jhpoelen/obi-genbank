@@ -28,6 +28,8 @@ Our desire is to develop a method to facilitate the discovery of this preserved 
 
 The Hoover Herbarium publishes their digital collections using DwC-A through the CCH2 portal. And, they registered their collection with the GBIF dataset registry. 
 
+### Package a Versioned GenBank Archive
+
 GenBank publishes their sequence accession records in flat file archives online via https://ftp.ncbi.nlm.nih.gov/genbank/ . Their publications are published grouped by divisions. One of these divisions, the so-called PLN division, covers sequences of plants, fungi and algae. 
 
 We used Preston, a biodiversity dataset tracker, to track GenBank PLN sequence records and make them available for versioned archiving, and offline processing [1].
@@ -77,6 +79,8 @@ hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e
 
 This resulting Preston package of GenBanks PLN division record was archived offline on an external harddisk and online at ASU's BioKiC (Biodiversity Knowledge integration Center) and made available via https://linker.bio .  
 
+### Find GenBank Records
+
 Then the GenBank archive was processed to list all records that mention "OBI" in their (locus, voucher_specimen) descriptions using:
 
 ```bash
@@ -95,6 +99,8 @@ The first command (i.e., ```preston ls ... https://linker.bio```) lists the cont
 The second command (i.e., ```preston gb-stream```) analyzes the package content as a stream, and generates metadata objects for each genbank accession encountered.
 
 The third command (i.e., ```grep "OBI"```) includes only those datadata records that contain "OBI".
+
+### Package a Versioned Herbarium Collection Archive
 
 Similarly, the OBI specimen records were tracked and archived using Preston [2]. Then, this versioned and offline enabled archive was used to query for identifiers found in candidate records. 
 
@@ -116,17 +122,21 @@ where the lines with "grep" in is select only records that have the specified nu
 
 ## Results
 
+### Capture GenBank Candidate Records
+
 On processing millions of GenBank accession records, 256 candidate genbank accession records with mention of OBI were shared with Katelin Pearson for review. By selecting the PLN division (plants), and selecting the OBI institutions code, we reduced the search space by a couple of order of magnitudes. With only a few hundred records, Katline Pearson, an OBI curator, was able to make the candidate GenBank accession records that likely referenced OBI specimen records (see [genbank-associations-mentioning-OBI.csv](./genbank-associations-mentioning-OBI.csv)  or associated [online sheet](https://docs.google.com/spreadsheets/d/1kXRi9zDCPNd_55IrOWDfUjvzLr7ZIEDwn_H2yvQd6gA/edit#gid=1944590275) for the table with manual review notes).
 
 Following, Jorrit Poelen used the OBI preston archive and retrieved preserved specimen records that contained numbers and/or other identifying information (e.g., scientific name occurring in the genbank accession record) to select a candidate specimen record for each candidate accession record. In about 1.5 hours, he compiled this list of specimen record / accession records associations in the following format. 
-
-With this information, Katelin Pearson took about 15 minutes to annotate the specimen records in the CCH2 Symbiota database with their related GenBank Accession number. Most of this time was spent to convert the information provided by Jorrit Poelen into a more convenient format. The full table can be found in [Appendix A](#appendix-a) and the first two lines of the OBI genetics table can be found below. Here, the occid is the record number unique to the CCH2 Symbiota database, url is the reference a GenBank accession, resourcename is the type of resource that Symbiota understands, and locus the optional information supported by Symbiota to include in an associated sequence record.
-
 
 | occid | url | resourcename | locus |
 | --- | --- | --- | --- |
 | 4060422 | https://www.ncbi.nlm.nih.gov/nuccore/MW025115 | GenBank Record | Fritillaria sp. SR-2020 voucher OBI161445 small subunit ribosomal RNA gene, partial sequence; internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence; and large subunit ribosomal RNA gene, partial sequence. |
 
+### Curatorial Candidate Record Review 
+
+With this information, Katelin Pearson, a OBI data curator, took about 15 minutes to annotate the specimen records in the CCH2 Symbiota database with their related GenBank Accession number. Most of this time was spent to convert the information provided by Jorrit Poelen into a more convenient format. The full table can be found in [Appendix A](#appendix-a) and the first two lines of the OBI genetics table can be found below. Here, the occid is the record number unique to the CCH2 Symbiota database, url is the reference a GenBank accession, resourcename is the type of resource that Symbiota understands, and locus the optional information supported by Symbiota to include in an associated sequence record.
+
+### Adding GenBank Links to Symbiota Records
 
 After Katelin Pearson upload the genbank link table into the CCH2 Symbiota database, she exported the updated records to the published DwC-A. Following, Jorrit Poelen tracked the updated version of the DwC-A and selected the records with associated GenBank sequence records. Following, he created a table (see [Appendix B.](#appendix-b)) including the reference to the original record, a web url to a html record page, and the associated genbank record annotations. The first three lines of Appendix B. can be found below.
 
