@@ -31,22 +31,21 @@ During the 2023 Annual Conference of Digital Data in Biodiversity Research hoste
 
 This repository is the outcome at a first prototype to help outline a process to discover OBI specimen record references in GenBank. With this, Jenn Yost and collaborators like Kate Pearson can link specimen records to the GenBank accession they are associated with. 
 
-![overlap GenBank-OBI](./overlap.svg)
+![GenBank-OBI integration challenge](./challenge.svg)
 : Hoover Herbarium (OBI) at Cal Poly State University, San Luis Obispo, CA keeps herbarium specimen. Some of these specimen have associated record in GenBank. These GenBank records extend the OBI specimen additional information such as genetic sequences.
 
 ### Example
 
-The Hoover Herbarium hosts a preserved specimen of type _Angelica hendersonii_ Coult. & Rose that was collected in 1966-07-05 by Tracey & Viola Call at the north end of Tomales Bay and 2 mi south of Tomales in Marin County, California with catalog number: OBI09031, collector number: 2490, occurrence id: 256368e3-f8d7-4028-8010-1a4ff3eb8111, and web reference https://cch2.org/portal/collections/individual/index.php?occid=166203.
+The Hoover Herbarium hosts a preserved specimen of type _Angelica hendersonii_ Coult. & Rose that was collected in 1966-07-05 by Tracey & Viola Call at the north end of Tomales Bay and 2 mi south of Tomales in Marin County, California with catalog number: OBI09031, collector number: 2490, occurrence id: 256368e3-f8d7-4028-8010-1a4ff3eb8111, and web reference [https://cch2.org/portal/collections/individual/index.php?occid=166203](https://cch2.org/portal/collections/individual/index.php?occid=166203).
 
 ![OBI09031.png](./OBI09031.png)
-: Webpage associated with OBI09031 as seen via https://cch2.org/portal/collections/individual/index.php?occid=166203 on 2023-09-11.
+: Webpage associated with OBI09031 as seen via [https://cch2.org/portal/collections/individual/index.php?occid=166203](https://cch2.org/portal/collections/individual/index.php?occid=166203) on 2023-09-11.
 
 
-GenBank hosts a accession record https://www.ncbi.nlm.nih.gov/nuccore/MT735455 with locus Angelica hendersonii voucher Tracey & V. Call 2490 (OBI09031) internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence. 
+GenBank hosts a accession record [https://www.ncbi.nlm.nih.gov/nuccore/MT735455](https://www.ncbi.nlm.nih.gov/nuccore/MT735455) with locus Angelica hendersonii voucher Tracey & V. Call 2490 (OBI09031) internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence. 
 
 ![MT735455](./MT735455.png)
-: Webpage associated with GenBank accession MT735455 as seen via https://www.ncbi.nlm.nih.gov/nuccore/MT735455 on 2023-09-11.
-
+: Webpage associated with GenBank accession MT735455 as seen via [https://www.ncbi.nlm.nih.gov/nuccore/MT735455](https://www.ncbi.nlm.nih.gov/nuccore/MT735455) on 2023-09-11.
 
 Our desire is to develop a method to facilitate the discovery of this preserved specimen and their associated GenBank accession records. The annotated web page screenshots below gives some hints to what information elements may be used to help associated related records.
 
@@ -57,7 +56,8 @@ Our desire is to develop a method to facilitate the discovery of this preserved 
 
 Instead of relying on visual inspection of individual html pages for herbarium specimen and GenBank accession records, an data-driven workflow was designed to first acquire and version GenBank and OBI records. Then, using these versioned archives, the records are analyzed and associated record candidates are proposed. 
 
-The Hoover Herbarium publishes their digital collections using DwC-A through the CCH2 portal. And, they registered their collection with the GBIF dataset registry. 
+![process](./process.svg)
+: version, analyze and merge workflows
 
 ### Phase 1. Acquire and Version
 
