@@ -27,7 +27,7 @@ Billions of biodiversity data records are made openly available by hundreds of N
 During the 2023 Annual Conference of Digital Data in Biodiversity Research hosted by Arizona State University, Jenn Yost expressed a desire to make it easier to link GenBank accession records to the specimen records the helps curate at the The Hoover Herbarium (```{ "http://rs.tdwg.org/dwc/terms/institutionCode": "OBI"}```), Cal Poly State University, San Luis Obispo, CA [@Yost_2023].
 
 ![yost.svg](yost.svg)
-: Jenn Yost expressing her desire to better Link GenBank records with their associated specimen records [@Yost_2023]. 
+: Jenn Yost expressing her desire to better link GenBank records to their associated specimen records [@Yost_2023]. 
 
 This repository is the outcome at a first prototype to help outline a process to discover OBI specimen record references in GenBank. With this, Jenn Yost and collaborators like Kate Pearson can link specimen records to the GenBank accession they are associated with. 
 
