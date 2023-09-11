@@ -13,6 +13,9 @@ abstract: |
   (or link) Natural History Collection records with their derived genetic accession records, extra work is need to make these associations explicit. We describe how a collaboration between a biodiversity informatics expert and collection managers of the Hoover/OBI Herbarium at CalPoly, San Luis Obispo, CA was forged with the aim to extend OBI specimen records to include their associated GenBank records. In addition, we quantify the costs of creating these specimen extensions, and discuss the socio-economic capacity needed to repeat this digital specimen extension process for the hundreds of millions of specimen records available globally today.  
 bibliography: biblio.bib
 reference-section-title: References
+header-includes:
+ - \usepackage{fvextra}
+ - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\}}
 ---
 
 
@@ -26,38 +29,33 @@ Billions of biodiversity data records are made openly available by hundreds of N
 
 During the 2023 Annual Conference of Digital Data in Biodiversity Research hosted by Arizona State University, Jenn Yost expressed a desire to make it easier to link GenBank accession records to the specimen records the helps curate at the The Hoover Herbarium (```{ "http://rs.tdwg.org/dwc/terms/institutionCode": "OBI"}```), Cal Poly State University, San Luis Obispo, CA [@Yost_2023].
 
-![yost.svg](yost.svg)
-: Jenn Yost expressing her desire to better link GenBank records to their associated specimen records [@Yost_2023]. 
+![Jenn Yost expressing her desire to better link GenBank records to their associated specimen records [@Yost_2023].](yost.svg)
 
 This repository is the outcome at a first prototype to help outline a process to discover OBI specimen record references in GenBank. With this, Jenn Yost and collaborators like Kate Pearson can link specimen records to the GenBank accession they are associated with. 
 
-![GenBank-OBI integration challenge](./challenge.svg)
-: Hoover Herbarium (OBI) at Cal Poly State University, San Luis Obispo, CA keeps herbarium specimen. Some of these specimen have associated record in GenBank. These GenBank records extend the OBI specimen additional information such as genetic sequences.
+![Hoover Herbarium (OBI) at Cal Poly State University, San Luis Obispo, CA keeps herbarium specimen. Some of these specimen have associated record in GenBank. These GenBank records extend the OBI specimen additional information such as genetic sequences.](./challenge.svg)
 
 ### Example
 
 The Hoover Herbarium hosts a preserved specimen of type _Angelica hendersonii_ Coult. & Rose that was collected in 1966-07-05 by Tracey & Viola Call at the north end of Tomales Bay and 2 mi south of Tomales in Marin County, California with catalog number: OBI09031, collector number: 2490, occurrence id: 256368e3-f8d7-4028-8010-1a4ff3eb8111, and web reference [https://cch2.org/portal/collections/individual/index.php?occid=166203](https://cch2.org/portal/collections/individual/index.php?occid=166203).
 
-![OBI09031.png](./OBI09031.png)
-: Webpage associated with OBI09031 as seen via [https://cch2.org/portal/collections/individual/index.php?occid=166203](https://cch2.org/portal/collections/individual/index.php?occid=166203) on 2023-09-11.
+![Webpage associated with OBI09031 as seen via [https://cch2.org/portal/collections/individual/index.php?occid=166203](https://cch2.org/portal/collections/individual/index.php?occid=166203) on 2023-09-11.](./OBI09031.png)
 
 
 GenBank hosts a accession record [https://www.ncbi.nlm.nih.gov/nuccore/MT735455](https://www.ncbi.nlm.nih.gov/nuccore/MT735455) with locus Angelica hendersonii voucher Tracey & V. Call 2490 (OBI09031) internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence. 
 
-![MT735455](./MT735455.png)
-: Webpage associated with GenBank accession MT735455 as seen via [https://www.ncbi.nlm.nih.gov/nuccore/MT735455](https://www.ncbi.nlm.nih.gov/nuccore/MT735455) on 2023-09-11.
+![Webpage associated with GenBank accession MT735455 as seen via [https://www.ncbi.nlm.nih.gov/nuccore/MT735455](https://www.ncbi.nlm.    nih.gov/nuccore/MT735455) on 2023-09-11.](./MT735455.png)
 
 Our desire is to develop a method to facilitate the discovery of this preserved specimen and their associated GenBank accession records. The annotated web page screenshots below gives some hints to what information elements may be used to help associated related records.
 
-![visual linking](./visual.svg)
-: At first glance, the highlighted parts of the html pages appear to suggest evidence of association between specimen record OBI09031 and accession record MT735455. These associations include OBI (the institution code), _Angelica hendersonii_ (taxonomic identification), 1966 (collection year), 2490 (collector number), 9031 (secondary catalog), and Tracy Call and Viola Call (collectors). 
+![At first glance, the highlighted parts of the html pages appear to suggest evidence of association between specimen record OBI09031 and accession record MT735455. These associations include OBI (the institution code), _Angelica hendersonii_ (taxonomic identification), 1966 (collection year), 2490 (collector number), 9031 (secondary catalog), and Tracy Call and Viola Call (collectors).
+](./visual.svg)
 
 ## Methods
 
 Instead of relying on visual inspection of individual html pages for herbarium specimen and GenBank accession records, an data-driven workflow was designed to first acquire and version GenBank and OBI records. Then, using these versioned archives, the records are analyzed and associated record candidates are proposed. 
 
-![process](./process.svg)
-: version, analyze and merge workflows
+![Version, Filter and Merge Workflow](./process.svg)
 
 ### Phase 1. Acquire and Version
 
@@ -69,7 +67,7 @@ We used Preston, a biodiversity dataset tracker, to track GenBank PLN sequence r
 
 The following script was used to track the GenBank PLN sequence records:
 
-```bash
+~~~
 #!/bin/bash
 #
 # Lists Genbank Plant sequence entries (including fungi and algae)
@@ -81,11 +79,11 @@ preston track "https://ftp.ncbi.nlm.nih.gov/genbank/gbrel.txt"\
  | grep -oE "gbpln+[0-9]+[.]seq"\
  | sed 's+^+https://ftp.ncbi.nlm.nih.gov/genbank/+g'\
  | sed 's+$+.gz+g'
-```
+~~~
 
 At the time, this produced a list of resources starting with:
 
-```
+~~~
 https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1.seq.gz
 https://ftp.ncbi.nlm.nih.gov/genbank/gbpln10.seq.gz
 https://ftp.ncbi.nlm.nih.gov/genbank/gbpln100.seq.gz
@@ -96,19 +94,19 @@ https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1003.seq.gz
 https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1004.seq.gz
 https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1005.seq.gz
 https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1006.seq.gz
-```
+~~~
 
 These files ending with ```seq.gz``` were then tracked using command like:
 
-```bash
+~~~
 preston track https://ftp.ncbi.nlm.nih.gov/genbank/gbpln1.seq.gz
-```
+~~~
 
 A Preston package was built using these "track" commands to document where and when genbank resources were accessed, and what they contained. In addition, copies of the resources were made. This package can be uniquely identified by the following content id:
 
-```
+~~~
 hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e
-```
+~~~
 
 This resulting Preston package of GenBanks PLN division record was archived offline on an external harddisk and online at ASU's BioKiC (Biodiversity Knowledge integration Center) and made available via https://linker.bio . The total volume of the GenBank PLN records was a little over 200GB, small enough to fit on a personal computer, or external hard disk. 
 
@@ -118,7 +116,7 @@ Similarly, the OBI specimen records were tracked and archived using Preston [@Po
 
 For instance, GenBank accession record https://www.ncbi.nlm.nih.gov/nuccore/MT735455 references numbers like "2490" and "9031" (from OBI09031) extracted from their locus. These numbers are then used to select records that contain both via query:  
 
-```bash
+~~~
 preston ls\
  --anchor hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6\
  --remote https://linker.bio\
@@ -128,7 +126,7 @@ preston ls\
  --no-cache\
  | grep -E "[^0-9a-zA-Z-](2490)[^0-9a-zA-Z]"\
  | grep -E "[^0-9a-zA-Z-](9031)[^0-9a-zA-Z]"
-```
+~~~
 
 where the lines with "grep" in is select only records that have the specified number (e.g., 2490, 9031) where the characters preceding and following are *not* alphanumeric characters. In this example, on only a single record has both numbers in it.
 
@@ -136,7 +134,7 @@ where the lines with "grep" in is select only records that have the specified nu
 
 Then the GenBank archive was processed to list all records that mention "OBI" in their (locus, voucher_specimen) descriptions using:
 
-```bash
+~~~
 preston ls\
  --anchor hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e\
  --remote https://linker.bio,https://zenodo.org/record/8117720/files/,https://biokic6.rc.asu.edu/preston/gbpln\
@@ -145,7 +143,7 @@ preston ls\
  --remote https://linker.bio,https://zenodo.org/record/8117720/files/,https://biokic6.rc.asu.edu/preston/gbpln\
  --no-cache\
  | grep "OBI"
-```
+~~~
 
 The first command (i.e., ```preston ls ... https://linker.bio```) lists the content of the package with id hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e, and downloads the necessary data via https://linker.bio if needed. 
 
@@ -184,7 +182,7 @@ In our methods, we keep track of the versions of the datasets we work with. The 
 
 To demonstrate the changes to a specific record related to our example specimen record OBI09031, please consider the record prior to annotating the association:
 
-```bash
+~~~
 preston ls\
  --anchor hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6\
  --remote https://linker.bio\
@@ -196,7 +194,7 @@ preston ls\
  | grep -E "[^0-9a-zA-Z-](9031)[^0-9a-zA-Z]"\
  | tail -n1\
  | jq --raw-output '.["http://www.w3.org/ns/prov#wasDerivedFrom"]'
-```
+~~~
 
 which points us to the versioned records with identifier:
 
@@ -206,7 +204,7 @@ The content associated with this content identifier can be retrieved via ```pres
 
 A textual representation of the record is shown below.
 
-```
+~~~
 id                             166203
 institutionCode                OBI
 collectionCode                 
@@ -299,11 +297,11 @@ rightsHolder
 accessRights                   
 recordID                       9a370197-6899-4072-8b17-4f2f043fbd54
 references                     https://cch2.org/portal/collections/individual/index.php?occid=166203
-```
+~~~
 
 Similarly, the record seen after the annotation can be retrieved using:
 
-```bash
+~~~
 preston ls\
  --anchor hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6\
  --remote https://linker.bio\
@@ -315,7 +313,7 @@ preston ls\
  | grep -E "[^0-9a-zA-Z-](9031)[^0-9a-zA-Z]"\
  | head -n1\
  | jq --raw-output '.["http://www.w3.org/ns/prov#wasDerivedFrom"]'
-```
+~~~
 
 yielding: 
 
@@ -325,30 +323,27 @@ yielding:
 Now, we can use a text comparison between the two versioned records, using [diff](https://en.wikipedia.org/wiki/Diff), a widely available linux tool.
 
 
-```
+~~~
 diff <(preston cat 'line:zip:hash://sha256/b60f9dd7868d6296ddea107219d41e5a92d55f1a5e0e5ee894c6e9977cb872cd!/occurrences.csv!/L1,L2361' | mlr --icsv --ojsonl cat ) <(preston cat 'line:zip:hash://sha256/cd9de973510975dac3394952bba9c486a482762b3beab05ecb678037b99ab85b!/occurrences.csv!/L1,L2361' | mlr --icsv --ojsonl cat) 
-```
+~~~
 
 which results in
 
-```diff
+~~~
 50c50
 <   "associatedSequences": "",
 ---
 >   "associatedSequences": "GenBank Record, Angelica hendersonii voucher Tracey & V. Call 2490 (OBI09031) internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence., https://www.ncbi.nlm.nih.gov/nuccore/MT735455|GenBank Record, Angelica hendersonii Tracey & V. Call 2490 (OBI09031) ndhF-rpl32 intergenic spacer, partial sequence., https://www.ncbi.nlm.nih.gov/nuccore/MT765790|GenBank Record, Angelica hendersonii Tracey & V. Call 2490 (OBI09031) tRNA-Asp (trnD-GUC), tRNA-Tyr (trnY-GUA), tRNA-Glu (trnE-UUC), and tRNA-Thr (trnT-GGU) genes, complete sequence., https://www.ncbi.nlm.nih.gov/nuccore/MT765975|GenBank Record, Angelica hendersonii Tracey & V. Call 2490 (OBI09031) rpl32-trnL intergenic spacer and tRNA-Leu (trnL) gene, partial sequence., https://www.ncbi.nlm.nih.gov/nuccore/MT766140",
-```
+~~~
 : output of a commonly used programming tool `diff` as applied to our OBI09031 example.
 
-![visual-diff.png](visual-diff.png)
-: output of a visual text comparison tool available via https://commontools.org as applied to our OBI09031 example. 
+![Output of a visual text comparison tool available via https://commontools.org as applied to our OBI09031 example.](visual-diff.png)
 
-Additionally, you can find the before/after example records in json [OBI09031-before.json](OBI09031-before.json)/ [OBI09031-after.json](OBI09031-after.json) or csv [OBI09031-before.csv](OBI09031-before.csv) / [OBI09031-after.csv](OBI09031-after.csv) formats.
+Additionally, you can find the before/after example records in json (i.e., [OBI09031-before.json](OBI09031-before.json)/ [OBI09031-after.json](OBI09031-after.json)) or csv (i.e., [OBI09031-before.csv](OBI09031-before.csv) / [OBI09031-after.csv](OBI09031-after.csv)) formats.
 
-Finally, because we have our versioned records available in text formats, the options for re-use, archiving, or other subsequent processing are plentiful, and is conistent with one of the unix principles. 
+Finally, because we have our versioned records available in text formats, the options for re-use, archiving, or other subsequent processing are plentiful, and is consistent with one of the Unix principles [@McIlroy_1978]. 
 
 > Expect the output of every program to become the input to another, as yet unknown, program. 
-
-
 
 ## Discussion
 
