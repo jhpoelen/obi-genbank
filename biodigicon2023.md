@@ -89,15 +89,15 @@ Workshop: Addressing Roadblocks and Envisioning Solutions of the Digital Extende
 
 — Jorrit Poelen 2023. [youtu.be/CNRAJvyDHu8?t=10080](https://youtu.be/CNRAJvyDHu8?t=10080)
 
-# Method
+# Methods
 
 ![OBI specimen overlaps GenBank ^[Sayers et al. 2019. Nucleic Acids Research [DOI:10.1093/nar/gky989](https://doi.org/10.1093/nar/gky989)] records.](challenge.svg)
 
-# Method
+# Methods
 
 ![Search for "OBI" in NCBI GenBank Online Search via [https://www.ncbi.nlm.nih.gov/nuccore/?term=OBI](https://www.ncbi.nlm.nih.gov/nuccore/?term=OBI) yielded over 200k candidate records at 2023-09-19.](obi-genbank-2023-f.png) 
 
-# Method
+# Methods
 
 ![A workflow extending OBI specimen to include associated GenBank records enabled through versioning and data streaming using existing tools  and resources (e.g., GenBank, Symbiota, Preston, grep, jq, Zenodo, BioKIC@ASU)](process.svg)
 
