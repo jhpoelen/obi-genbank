@@ -82,59 +82,63 @@ Workshop: Addressing Roadblocks and Envisioning Solutions of the Digital Extende
 
 # Communicate, Collaborate, and Explore
 
-
 > "[...] you're looking [...] to review your data set
 >  and find all the [...] sequences known for your specimen [...] I'd say let's build it let's do it as long as you give me a
-> coffee and a cookie [...] **I'm serious**" 
+> coffee and a cookie [...] **I'm serious.**" 
 
 — Jorrit Poelen 2023. [youtu.be/CNRAJvyDHu8?t=10080](https://youtu.be/CNRAJvyDHu8?t=10080)
 
-# Methods
+# Extending Specimen: Visualizing the "it" in "let's build it"
 
-![OBI specimen overlaps GenBank ^[Sayers et al. 2019. Nucleic Acids Research [DOI:10.1093/nar/gky989](https://doi.org/10.1093/nar/gky989)] records.](challenge.svg)
+![OBI specimens overlap GenBank ^[Sayers et al. 2019. Nucleic Acids Research [DOI:10.1093/nar/gky989](https://doi.org/10.1093/nar/gky989)] records.](challenge.svg)
 
-# Methods
+# Intermezzo
+
+Dunn's ideas in his 1946 "Record Linkage" publication sure do sound a lot like ideas behind the (digital) extended specimen, don't they? ^[Dunn HL. 1946. Record Linkage. American Public Health Association. [doi:10.2105/AJPH.36.12.1412](https://doi.org/10.2105/AJPH.36.12.1412)]
+
+![](Dunn_1946_a.png) 
+
+# Trying Existing Tools
 
 ![Search for "OBI" in NCBI GenBank Online Search via [https://www.ncbi.nlm.nih.gov/nuccore/?term=OBI](https://www.ncbi.nlm.nih.gov/nuccore/?term=OBI) yielded over 200k candidate records at 2023-09-19.](obi-genbank-2023-f.png) 
 
-# Methods
+
+# OBI-GenBank Integration Workflow
 
 ![A workflow extending OBI specimen to include associated GenBank records enabled through versioning and data streaming using existing tools  and resources (e.g., GenBank, Symbiota, Preston, grep, jq, Zenodo, BioKIC@ASU)](process.svg)
 
+# OBI-GenBank Integration Workflow Details
 
-# Results 
-
-The Hoover Herbarium (OBI) hosts a preserved specimen of type *Angelica hendersonii* Coult. & Rose that was collected in 1966-07-05 by Tracey & Viola Call at the north end of Tomales Bay and 2 mi south of Tomales in Marin County, California with catalog number: **OBI09031**, collector number: 2490, occurrence id: 256368e3-f8d7-4028-8010-1a4ff3eb8111, and web reference [https://cch2.org/portal/collections/individual/index.php?occid=166203](https://cch2.org/portal/collections/individual/index.php?occid=166203).
-
-
-
-# Results 
-
-![OBI09031](OBI09031.png)
-
-# Results
-
-GenBank hosts a accession record **MT735455** with locus `MT735455 599 bp DNA linear PLN 23-MAY-2021` and definition *Angelica hendersonii* voucher Tracey & V. Call 2490 (OBI09031) internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence, and web reference [https://www.ncbi.nlm.nih.gov/nuccore/MT735455](https://www.ncbi.nlm.nih.gov/nuccore/MT735455).
-
-# Results
-
-![MT735455](MT735455.png)
-
-# Results
-
-We found, among others, OBI associated GenBank accession **MT735455**, using my Lenovo T480s Laptop, BioKIC, and a 500Gb internet connection by ^[Poelen JH, Pearson KD, Yost J. 2023. Extending OBI Herbarium Records to include associated NCBI GenBank sequences. [https://jhpoelen.nl/obi-genbank](https://jhpoelen.nl/obi-genbank) [hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6](https://linker.bio/hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6)]:
+We found, among others, OBI associated GenBank accession **MT735455**, using my Lenovo T480s Laptop, BioKIC, and a 500Mb internet connection by ^[Poelen JH, Pearson KD, Yost J. 2023. Extending OBI Herbarium Records to include associated NCBI GenBank sequences. [https://jhpoelen.nl/obi-genbank](https://jhpoelen.nl/obi-genbank) [hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6](https://linker.bio/hash://sha256/be5605e58d2644baedcb160604080d9f02ce528064b7fbb13a5b556dd55cfeb6)]:
 
 1. versioning GenBank PLN ^[Poelen, Jorrit H. (2023). GenBank PLN (Plantae, Fungi, Algae) Sequence Index in TSV, CSV, JSONL formats hash://sha256/bc7368469e50020ce8ae27b9d6a9a869e0b9a2a0a9b5480c69ce6751fa4b870e hash://md5/f6f78f64e3b3ff06adc3229badbd578b (0.1) [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.8117720](https://doi.org/10.5281/zenodo.8117720)]
-2. streaming all GenBank PLN records
-3. including only GenBank record containing "OBI" 
+2. streaming all ~7M GenBank PLN records
+3. filter by GenBank record containing "OBI", not followed or preceded by letters
 4. reviewing the ~200 resulting records
 5. verify linked OBI specimen records
 
-# Results
+# Example: Herbarium Specimen **OBI09031**
 
-![overlap OBI09031 and MT735455](visual.svg)
+The Hoover Herbarium (OBI) hosts a preserved specimen of type *Angelica hendersonii* Coult. & Rose that was collected in 1966-07-05 by Tracey & Viola Call at the north end of Tomales Bay and 2 mi south of Tomales in Marin County, California with catalog number: **OBI09031**, collector number: 2490, occurrence id: 256368e3-f8d7-4028-8010-1a4ff3eb8111, and web reference [https://cch2.org/portal/collections/individual/index.php?occid=166203](https://cch2.org/portal/collections/individual/index.php?occid=166203).
 
-# Results
+# Example: Herbarium Specimen **OBI09031**
+
+![ Herbarium Specimen **OBI09031**](OBI09031.png)
+
+# Example: GenBank Accession **MT735455**
+
+GenBank hosts a accession record **MT735455** with locus `MT735455 599 bp DNA linear PLN 23-MAY-2021` and definition *Angelica hendersonii* voucher Tracey & V. Call 2490 (OBI09031) internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal transcribed spacer 2, complete sequence, and web reference [https://www.ncbi.nlm.nih.gov/nuccore/MT735455](https://www.ncbi.nlm.nih.gov/nuccore/MT735455).
+
+# Example: GenBank Accession **MsT735455**
+
+![GenBank Accession **MT735455**](MT735455.png)
+
+# Visual Inspection of OBI-GenBank Linkage
+
+![Apparent overlap between OBI Specimen OBI09031 and GenBank Accession MT735455](visual.svg)
+
+
+# Outcomes
 
 ::: columns
 
@@ -158,7 +162,7 @@ We found, among others, OBI associated GenBank accession **MT735455**, using my 
 :::
 
 
-# Results
+# Rewards and Paying It Forward
 
 
 ::: columns
@@ -179,9 +183,7 @@ We found, among others, OBI associated GenBank accession **MT735455**, using my 
 
 :::
 
-
-
-# Results
+# Share and Discuss
 
 Lindsay Walker and Katie Pearson hosted a recorded SSG session organized around our experiences on linking genetic sequences ^[Symbiota Support Hub. (2023, September 11). Symbiota Support Group: Genetic Linkages with guest Jorrit Poelen. YouTube. [https://youtu.be/H76eeKxECEs](https://youtu.be/H76eeKxECEs)].
 
